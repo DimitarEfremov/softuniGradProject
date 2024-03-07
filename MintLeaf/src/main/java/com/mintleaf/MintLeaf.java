@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.mintleaf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class MintLeaf {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(MintLeaf.class, args);
 	}
 
 }
