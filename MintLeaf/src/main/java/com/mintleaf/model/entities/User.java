@@ -1,0 +1,32 @@
+package com.mintleaf.model.entities;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
+
+import java.util.List;
+
+public class User extends BaseEntity {
+
+    @Column(nullable = false)
+    @Size(min = 2, max = 20)
+    private String userName;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Email
+    private String email;
+
+    private boolean admin;
+
+    @OneToMany
+    private List<Recipe> recipesAdded;
+
+    @ManyToMany
+    private List<Recipe> recipesLiked;
+
+
+}
