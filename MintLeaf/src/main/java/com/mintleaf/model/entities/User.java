@@ -15,6 +15,7 @@ public class User extends BaseEntity {
     private String userName;
 
     @Column(nullable = false)
+    @Size(min = 2, max = 18)
     private String password;
 
     @Email
