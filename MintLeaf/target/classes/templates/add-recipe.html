@@ -4,39 +4,59 @@
     <meta charset="UTF-8">
     <title>Add Recipe</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/add-recipe.css">
 </head>
 <body>
 
-<section>
-  <nav>
-    <div class="logo">
-      <img src="/images/mintLeafLogo.png">
+<section th:replace="~{fragments/commons::nav}"> ></section>
+
+<div class="hero">
+
+    <div class="recipe_form">
+
+        <h1 class="recipe_head">Add recipe</h1>
+
+        <form class="input_box">
+
+
+            <input type="text" class="field" placeholder="Recipe Name">
+
+            <select class="field" name="foodType">
+                <option value="" disabled selected>> Select cuisine</option>
+                <option value="Placeholder">Placeholder</option>
+                <option value="Placeholder">Placeholder</option>
+                <option value="Placeholder">Placeholder</option>
+                <option value="Placeholder">Placeholder</option>
+            </select>
+
+            <select class="field" name="foodType">
+                <option value="" disabled selected>>Select category</option>
+                <option value="BREAKFAST_AND_BRUNCH">Breakfast and brunch</option>
+                <option value="APPETISERS">appetisers</option>
+                <option value="LUNCH">lunch</option>
+                <option value="DINNER">dinner</option>
+                <option value="BREAD">bread</option>
+                <option value="DRINKS">drinks</option>
+                <option value="DESSERTS">desserts</option>
+            </select>
+
+            <input type="image" class="field" placeholder="Image">
+
+            <input type="time" class="field" placeholder="Prep Time">
+
+            <legend>Add 1 product on a row, for example: <b> Potatoes - 1kg </b> </legend>
+            <textarea class="recipe_textarea" name="products" rows="10" cols="30">
+            </textarea>
+
+            <legend>Describe the preparation process </legend>
+            <textarea class="recipe_textarea" name="steps" rows="10" cols="30">
+            </textarea>
+
+
+        </form>
+
+
     </div>
-
-    <ul>
-      <li><a href="#Home">Home</a></li>
-      <li><a href="#About">About</a></li>
-      <li><a href="#Menu">Menu</a></li>
-      <li><a href="#Gallary">Gallary</a></li>
-      <li><a href="#Review">Review</a></li>
-      <li><a href="#Order">Order</a></li>
-    </ul>
-
-    <div class="icon">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <i class="fa-solid fa-heart"></i>
-      <i class="fa-solid fa-cart-shopping"></i>
-    </div>
-
-  </nav>
-</section>
-
-<div class="main">
-
-  <h1><span>Add word</span></h1>
-  <hr/>
-
-
 
 </div>
 

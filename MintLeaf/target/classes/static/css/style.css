@@ -86,14 +86,14 @@ section .main{
     top: 130px;
 }
 
-section .main .men_text h1{
+section .main .main_text h1{
     font-size: 60px;
     position: relative;
     top: -90px;
     left: 20px;
 }
 
-section .main .men_text h1 span{
+section .main .main_text h1 span{
     margin-left: 15px;
     color: #45ae64;
     font-family: mv boli, serif;
@@ -144,21 +144,17 @@ section .main_btn:hover i{
 /*<!-- Register -->*/
 
 
-.register_hero{
+.hero{
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-repeat: repeat-y;
     background-image: url(/images/bg.png);
     position: absolute;
 }
 
-.background_image{
-
-}
-
-
-.register_hero .register_form{
+.hero .register_form{
     width: 400px;
     height: 490px;
     background-size: cover;
@@ -172,7 +168,7 @@ section .main_btn:hover i{
     box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
 }
 
-.register_hero .register_form .register_head{
+.hero .register_form .register_head{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,7 +177,7 @@ section .main_btn:hover i{
 
 }
 
-.register_hero .register_form .register_head::after{
+.hero .register_form .register_head::after{
     content: '';
     width: 20%;
     height: 3px;
@@ -193,12 +189,12 @@ section .main_btn:hover i{
 
 }
 
-.register_hero .register_form .input_box{
+.hero .register_form .input_box{
     width: 330px;
     margin: 0 auto;
 }
 
-.register_hero .register_form .input_box .field {
+.hero .register_form .input_box .field {
     width: 100%;
     border-bottom: 1px solid #919191;
     border-top: 0;
@@ -211,7 +207,7 @@ section .main_btn:hover i{
     font-size: 15px;
 }
 
-.register_hero .register_form .input_box .submit {
+.hero .register_form .input_box .submit {
     outline: none;
     border: none;
     background: #31d963;
@@ -226,16 +222,16 @@ section .main_btn:hover i{
 
 }
 
-.register_hero .register_form .tag{
+.hero .register_form .tag{
     margin: 25px auto 0 auto;
     width: 150px;
 }
 
-.register_hero .register_form .tag span{
+.hero .register_form .tag span{
     font-size: 15px;
 }
 
-.register_hero .register_form .tag a{
+.hero .register_form .tag a{
     font-size: 15px;
     margin-left: 5px;
     color: #45ae64;

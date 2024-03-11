@@ -11,15 +11,17 @@ public class Recipe extends BaseEntity {
     @Size(min = 2, max = 20)
     private String recipeName;
 
-    private Type foodType;
+    private Type category;
 
     private Cuisine cuisine;
 
     private String imagePath;
 
-    private String description;
+    private String prepTime;
 
     private List<Ingredient> ingredients;
+
+    private String description;
 
     private List<Direction> directions;
 
