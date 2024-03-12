@@ -8,9 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class RecipeController {
 
     @GetMapping("/add-recipe")
-    public ModelAndView login(){
+    public ModelAndView addRecipe(){
 
         return new ModelAndView("add-recipe");
+    }
+
+    @GetMapping("/recipe")
+    public ModelAndView showRecipe(){
+
+        return new ModelAndView("recipe");
     }
 
 
