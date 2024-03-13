@@ -1,5 +1,6 @@
 package com.mintleaf.model.entities;
 
+import com.mintleaf.model.enums.Type;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Size;
 

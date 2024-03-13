@@ -1,5 +1,6 @@
 package com.mintleaf.model.entities;
 
+import com.mintleaf.model.enums.Rights;
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
@@ -21,7 +22,7 @@ public class User extends BaseEntity {
     @Email
     private String email;
 
-    private boolean admin;
+    private Rights userRight;
 
     @OneToMany
     private List<Recipe> recipesAdded;

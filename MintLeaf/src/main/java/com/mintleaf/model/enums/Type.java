@@ -1,4 +1,4 @@
-package com.mintleaf.model.entities;
+package com.mintleaf.model.enums;
 
 public enum Type {
 
