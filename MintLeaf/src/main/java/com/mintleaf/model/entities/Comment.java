@@ -2,11 +2,10 @@ package com.mintleaf.model.entities;
 
 public class Comment extends BaseEntity{
 
-    private User user;
+    private User addedBy;
 
     private String content;
 
-    //tag??
-    //private List<Tag> tags;
+    private Integer recipeID;
 
 }

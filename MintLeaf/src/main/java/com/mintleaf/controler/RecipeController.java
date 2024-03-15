@@ -19,5 +19,4 @@ public class RecipeController {
         return new ModelAndView("recipe");
     }
 
-
 }

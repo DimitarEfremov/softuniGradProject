@@ -12,12 +12,33 @@
     box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
 }
 
+.row1{
+    display: flex;
+}
 
-.recipe_article .recipe_head{
+.row1{
+    display: flex;
+}
+
+
+.recipe_article .recipe_left{
     margin-bottom: 1rem;
     font-size: 2rem;
     line-height: 3.25rem;
     text-underline-offset: .75rem;
+    flex: 50%;
+}
+
+.recipe_article .recipe_left img{
+    max-width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    height: auto;
+}
+
+.recipe_article .ingredients{
+    flex: 50%;
 }
 
 .recipe_article .ingredients h2{
