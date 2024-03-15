@@ -1,0 +1,124 @@
+/*Menu*/
+
+.menu{
+    width: 100%;
+    height: 100vh;
+    padding: 75px 0;
+}
+
+.menu h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    color: #000;
+}
+
+.menu h1 span{
+    color: #45ae64;
+    margin-left: 15px;
+}
+
+.menu .menu_box{
+    width: 95%;
+    margin: 45px auto 0 auto;
+    display: grid;
+    grid-gap: 30px 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu .menu_box .menu_card{
+    background-image: url(/images/menu_card_bg.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    width: 450px;
+    height: 575px;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+
+.menu .menu_box .menu_card .menu_img{
+    margin: 0 auto;
+    width: 420px;
+    height: 300px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.menu .menu_box .menu_card .menu_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.menu .menu_box .menu_card .menu_text h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.menu .menu_box .menu_card .menu_text p{
+    line-height: 21px;
+    margin-bottom: 15px;
+    margin: 0 auto;
+    width: 400px;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_icon{
+    color: #facc22;
+    margin: 8px 0;
+}
+
+.menu .menu_box .menu_card .menu_text .price{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px 0;
+    margin-left: 45px;
+}
+
+.menu .menu_box .menu_card .menu_text .price sub{
+    margin-left: 5px;
+    color: #6d6a6a;
+    font-size: 13px;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn{
+    color: #000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #facc22;
+    position: relative;
+    top: 20px;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn:hover{
+    color: #fff;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #facc22;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn:hover::before{
+    top: unset;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu .menu_box .menu_card .menu_text .menu_btn i{
+    margin-right: 8px;
+}
