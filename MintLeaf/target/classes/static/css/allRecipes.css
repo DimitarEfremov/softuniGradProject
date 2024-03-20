@@ -22,7 +22,7 @@ html{
 /* Sidebar styles */
 .tags-container {
     flex: 10%; /* Sidebar takes up 15% of the container */
-    padding-right: 20px; /* Add spacing between tags and recipes */
+    padding-right: 15px; /* Add spacing between tags and recipes */
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -39,14 +39,16 @@ html{
 
 .tags-list {
     display: flex;
-    flex-direction: column; /* Display tags vertically */
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
 }
 
 .tags-list a {
     text-transform: capitalize;
     color: #64748b;
     margin-bottom: 0.5rem; /* Add spacing between tags */
+    margin-right: 5px;
     transition: 0.3s ease-in-out all;
+    display: inline-block;
 }
 
 .tags-list a:hover {
