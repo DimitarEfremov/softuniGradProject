@@ -16,12 +16,24 @@
 
             <h1 class="register_head">Register</h1>
 
-            <form class="input_box">
+            <form
+                    th:action="@{/register}"
+                    th:method="post"
 
-                <input type="text" class="field" placeholder="Username">
-                <input type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
-                <input type="password" class="field" placeholder="Confirm Password" maxlength="18" minlength="2">
-                <input type="email" class="field" placeholder="Email">
+                    class="input_box">
+
+                <input id="username"
+                       name="username"
+                        type="text" class="field" placeholder="Username">
+                <input id="password"
+                       name="password"
+                       type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
+                <input id="passwordConfirm"
+                       name="passwordConfirm"
+                        type="password" class="field" placeholder="Confirm Password" maxlength="18" minlength="2">
+                <input id="email"
+                       name="email"
+                        type="email" class="field" placeholder="Email">
                 <button class="submit">Register</button>
 
 

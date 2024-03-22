@@ -1,14 +1,14 @@
 package com.mintleaf.model.entities;
 
 import com.mintleaf.model.enums.Rights;
-import jakarta.persistence.Column;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
+@Entity
+@Table(name = "users")
 public class User extends BaseEntity {
 
     @Column(nullable = false)
@@ -24,11 +24,37 @@ public class User extends BaseEntity {
 
     private Rights userRight;
 
-    @OneToMany
-    private List<Recipe> recipesAdded;
-
-    @ManyToMany
-    private List<Recipe> recipesLiked;
 
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Rights getUserRight() {
+        return userRight;
+    }
+
+    public void setUserRight() {
+        this.userRight = Rights.USER;
+    }
 }

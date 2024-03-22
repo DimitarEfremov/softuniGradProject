@@ -2,6 +2,8 @@ package com.mintleaf.model.entities;
 
 import com.mintleaf.model.enums.Type;
 import jakarta.persistence.Column;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
@@ -27,6 +29,12 @@ public class Recipe extends BaseEntity {
     private List<Direction> directions;
 
     private List<Comment> comments;
+
+    @ManyToOne
+    private List<User> createdBy;
+
+    @ManyToMany
+    private List<User> likedBy;
 
 
 
