@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AllRecipesController {
 
-    @GetMapping("/recipes")
+    @GetMapping("/allRecipes")
     public ModelAndView allRecipes(){
 
         return new ModelAndView("allRecipes");

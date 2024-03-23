@@ -6,16 +6,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
-//@Configuration
-//public class SecurityConfiguration {
-//
-//    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity httpSecurity){
-//
-//            httpSecurity.authorizeHttpRequests(
-//                    authoriseRequests -> authoriseRequests
-//                            .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-//                            .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
-//            )
-//    }
-//}
+@Configuration
+public class SecurityConfiguration {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity httpSecurity){
+
+            httpSecurity.authorizeHttpRequests(
+                    authoriseRequests -> authoriseRequests
+                            .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                            .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
+            )
+    }
+}
