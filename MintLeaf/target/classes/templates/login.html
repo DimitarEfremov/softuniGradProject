@@ -16,10 +16,12 @@
 
         <h1 class="register_head">Login</h1>
 
-        <form class="input_box">
+        <form th:method="post"
+              th:action="@{/login}"
+              class="input_box">
 
-            <input type="text" class="field" placeholder="Username">
-            <input type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
+            <input id="username" name="username" type="text" class="field" placeholder="Username">
+            <input id="password" name="password" type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
             <button class="submit">Log in</button>
 
 
