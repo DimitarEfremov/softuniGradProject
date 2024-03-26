@@ -4,6 +4,7 @@ import com.mintleaf.model.enums.Rights;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.List;
 
@@ -12,14 +13,14 @@ import java.util.List;
 public class User extends BaseEntity {
 
     @Column(nullable = false)
-    @Size(min = 2, max = 20)
+    @Length(min = 3, max = 20)
     private String userName;
 
     @Column(nullable = false)
-    @Size(min = 2, max = 18)
     private String password;
 
     @Email
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Enumerated(EnumType.STRING)
