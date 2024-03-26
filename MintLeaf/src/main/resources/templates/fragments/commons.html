@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th='http://www.thymeleaf.org'
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 <head>
     <meta charset="UTF-8">
     <title>MintLeaf</title>
@@ -17,14 +19,24 @@
         <li><a class="nav-bar-item" href="#My Menu">My Menu</a></li>
         <li><a class="nav-bar-item" href="/allRecipes">Meals</a></li>
         <li><a class="nav-bar-item" href="/add-recipe">Add Recipe</a></li>
-        <li><a class="nav-bar-item" href="/login">Login</a></li>
-        <li><a class="nav-bar-item" href="/register">Register</a></li>
-        <li>
+        <li sec:authorize="isAnonymous()" ><a class="nav-bar-item" href="/login">Login</a></li>
+        <li sec:authorize="isAnonymous()" ><a class="nav-bar-item" href="/register">Register</a></li>
+        <li sec:authorize="isAuthenticated()">
             <form th:method="post"
                   th:action="@{/logout}">
                 <input class="nav-bar-item logout" type="submit" value="Logout"/>
             </form>
         </li>
+        <li>
+            <th:block sec:authorize="isAuthenticated()">
+                Welcome back <th:block sec:authentication="name"></th:block>
+            </th:block>
+            <th:block sec:authorize="isAnonymous()">
+                Welcome Anonymous
+            </th:block>
+        </li>
+
+
     </ul>
 
     <div class="icon">
