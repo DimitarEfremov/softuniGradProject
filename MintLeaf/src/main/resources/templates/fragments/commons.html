@@ -12,14 +12,19 @@
     </div>
 
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#Admin">Admin</a></li>
-        <li><a href="#My Menu">My Menu</a></li>
-        <li><a href="/allRecipes">Meals</a></li>
-        <li><a href="/add-recipe">Add Recipe</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="#Logout">Logout</a></li>
+        <li><a class="nav-bar-item" href="/">Home</a></li>
+        <li><a class="nav-bar-item" href="#Admin">Admin</a></li>
+        <li><a class="nav-bar-item" href="#My Menu">My Menu</a></li>
+        <li><a class="nav-bar-item" href="/allRecipes">Meals</a></li>
+        <li><a class="nav-bar-item" href="/add-recipe">Add Recipe</a></li>
+        <li><a class="nav-bar-item" href="/login">Login</a></li>
+        <li><a class="nav-bar-item" href="/register">Register</a></li>
+        <li>
+            <form th:method="post"
+                  th:action="@{/logout}">
+                <input class="nav-bar-item logout" type="submit" value="Logout"/>
+            </form>
+        </li>
     </ul>
 
     <div class="icon">

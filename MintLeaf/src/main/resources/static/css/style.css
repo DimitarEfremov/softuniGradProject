@@ -41,7 +41,8 @@ nav ul li{
     margin: 0 15px;
 }
 
-nav ul li a{
+
+.nav-bar-item{
     text-decoration: none;
     color: #000;
     font-weight: 500;
@@ -49,7 +50,14 @@ nav ul li a{
     transition: 0.1s;
 }
 
-nav ul li a::after{
+.logout{
+    background: none;
+    border: none;
+    outline: none;
+
+}
+
+.nav-bar-item::after{
     content: '';
     width: 0;
     height: 2px;
@@ -58,11 +66,11 @@ nav ul li a::after{
     transition: 0.2s linear;
 }
 
-nav ul li a:hover::after{
+.nav-bar-item:hover::after{
     width: 100%;
 }
 
-nav ul li a:hover{
+.nav-bar-item:hover{
     color: #45ae64;
 }
 
