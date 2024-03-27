@@ -27,3 +27,6 @@ logging:
     blog: WARN
 server:
   port: 8080
+
+mintleaf:
+  remember.me.key: ${REMEBER_ME_KEY:topsecret}
