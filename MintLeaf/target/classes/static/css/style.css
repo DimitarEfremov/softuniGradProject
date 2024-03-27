@@ -215,6 +215,10 @@ section .main_btn:hover i{
     font-size: 15px;
 }
 
+.rememberMe{
+    margin-bottom: 20px;
+}
+
 .hero .register_form .input_box .submit {
     outline: none;
     border: none;
