@@ -31,7 +31,7 @@ public class SecurityConfiguration {
         httpSecurity.authorizeHttpRequests(
                 authoriseRequests -> authoriseRequests
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                        .requestMatchers("/", "/register", "/login", "/allRecipes", "/recipe", "/add-recipe").permitAll()
+                        .requestMatchers("/", "/register", "/login", "/allRecipes", "/recipe", "/add-recipe", "/login-error").permitAll()
                         .anyRequest().authenticated()
         ).formLogin(
                 formLogin -> {
@@ -40,7 +40,7 @@ public class SecurityConfiguration {
                             .usernameParameter("username")
                             .passwordParameter("password")
                             .defaultSuccessUrl("/")
-                            .failureUrl("/login");
+                            .failureForwardUrl("/login-error");
                 }
         ).logout(
                 logout -> {

@@ -16,13 +16,14 @@
 
         <h1 class="register_head">Login</h1>
 
+        <h3 th:if="${bad_credentials}" class="register_error">>Incorrect username or password</h3>
+
         <form th:method="post"
               th:action="@{/login}"
               class="input_box">
 
-            <input id="username" name="username" type="text" class="field" placeholder="Username">
-            <input id="password" name="password" type="password" class="field" placeholder="Password" maxlength="18"
-                   minlength="2">
+            <input id="username" th:value="${username}" name="username" type="text" class="field" placeholder="Username">
+            <input id="password" name="password" type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
             <label for="rememberMe" class="field">Remember me
                 <input id="rememberMe" name="rememberMe" type="checkbox" class="rememberMe">
             </label>
