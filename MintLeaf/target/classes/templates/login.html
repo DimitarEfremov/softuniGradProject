@@ -16,7 +16,7 @@
 
         <h1 class="register_head">Login</h1>
 
-        <h3 th:if="${bad_credentials}" class="register_error">>Incorrect username or password</h3>
+        <h3 th:if="${bad_credentials}" class="login_error">Incorrect username or password</h3>
 
         <form th:method="post"
               th:action="@{/login}"

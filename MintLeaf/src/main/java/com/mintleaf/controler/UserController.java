@@ -14,20 +14,20 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
 
-private final UserService userService;
+    private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping("/login")
-    public ModelAndView login(){
+    public ModelAndView login() {
 
         return new ModelAndView("login");
     }
 
     @PostMapping("/login-error")
-    public String loginError( @ModelAttribute("username") String username, Model model ){
+    public String loginError(@ModelAttribute("username") String username, Model model) {
 
         model.addAttribute("username", username);
         model.addAttribute("bad_credentials", "true");
@@ -37,21 +37,30 @@ private final UserService userService;
 
 
     @GetMapping("/register")
-    public ModelAndView register(){
+    public ModelAndView register(
+            @ModelAttribute("createUserDTO") CreateUserDTO createUserDTO
+    ) {
 
         return new ModelAndView("register");
     }
 
     @PostMapping("/register")
     public ModelAndView register(
-            @ModelAttribute("CreateUserDTO") @Valid CreateUserDTO createUserDTO, BindingResult bindingResult){
+            @ModelAttribute("createUserDTO") @Valid CreateUserDTO createUserDTO, BindingResult bindingResult) {
 
         boolean hasSuccessfulRegistration = userService.registerUser(createUserDTO);
 
-        if (hasSuccessfulRegistration){
-            return new ModelAndView("login");
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("register");
         }
-        return new ModelAndView("register");
+
+        if (!hasSuccessfulRegistration) {
+            ModelAndView modelAndView = new ModelAndView("register");
+            modelAndView.addObject("hasRegistrationError", true);
+            return modelAndView;
+        }
+
+        return new ModelAndView("login");
     }
 
 

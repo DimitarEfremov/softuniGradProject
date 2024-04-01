@@ -25,6 +25,15 @@ public class UserServiceImpl implements UserService {
             return false;
         }
 
+        boolean existsByUsernameOrEmail = userRepository.existsByUserNameOrEmail(
+                createUserDTO.getUsername(),
+                createUserDTO.getEmail());
+
+        if (existsByUsernameOrEmail) {
+            return false;
+        }
+
+
         User user = new User();
         user.setUserName(createUserDTO.getUsername());
         user.setEmail(createUserDTO.getEmail());

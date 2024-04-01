@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -10,42 +10,59 @@
 <section th:replace="~{fragments/commons::nav}"> ></section>
 
 
-    <div class="hero">
+<div class="hero">
 
-        <div class="register_form">
+    <div class="register_form">
 
-            <h1 class="register_head">Register</h1>
+        <h1 class="register_head">Register</h1>
 
-            <form
-                    th:action="@{/register}"
-                    th:method="post"
+        <form
+                th:action="@{/register}"
+                th:method="post"
+                th:object="${createUserDTO}"
 
-                    class="input_box">
+                class="input_box">
 
-                <input id="username"
-                       name="username"
-                        type="text" class="field" placeholder="Username">
-                <input id="password"
-                       name="password"
-                       type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
-                <input id="passwordConfirm"
-                       name="passwordConfirm"
-                        type="password" class="field" placeholder="Confirm Password" maxlength="18" minlength="2">
-                <input id="email"
-                       name="email"
-                        type="email" class="field" placeholder="Email">
-                <button class="submit">Register</button>
+            <div th:if="${hasRegistrationError}" class="login_error">Registration Error occurred</div>
+
+            <small th:if="${#fields.hasErrors('username')}"
+                   th:errors="*{username}"
+                   class="login_error"></small>
+
+            <input type="text" id="username" class="field"
+                   name="username" placeholder="Username"
+                   th:field="*{username}"
+                   th:errorclass="login_error">
+
+            <input id="password"
+                   name="password"
+                   type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
+            <input id="passwordConfirm"
+                   name="passwordConfirm"
+                   type="password" class="field" placeholder="Confirm Password" maxlength="18" minlength="2">
+
+            <small th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}"
+                   class="login_error"></small>
+
+            <input type="email" id="email" class="field"
+                   name="email" placeholder="Email"
+                   th:field="*{email}"
+                   th:errorclass="login_error">
 
 
-                <div class="tag">
-                    <span>Already have an account? <a href="/login">Log in</a></span>
-                </div>
+            <button class="submit">Register</button>
 
 
-            </form>
+            <div class="tag">
+                <span>Already have an account? <a href="/login">Log in</a></span>
+            </div>
 
-        </div>
+
+        </form>
+
     </div>
+</div>
 
 
 </body>

@@ -215,6 +215,12 @@ section .main_btn:hover i{
     font-size: 15px;
 }
 
+.login_error{
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    padding: 4px 12px;
+}
+
 .rememberMe{
     margin-bottom: 20px;
 }
