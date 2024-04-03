@@ -48,11 +48,12 @@ public class UserController {
     public ModelAndView register(
             @ModelAttribute("createUserDTO") @Valid CreateUserDTO createUserDTO, BindingResult bindingResult) {
 
-        boolean hasSuccessfulRegistration = userService.registerUser(createUserDTO);
 
         if (bindingResult.hasErrors()) {
             return new ModelAndView("register");
         }
+
+        boolean hasSuccessfulRegistration = userService.registerUser(createUserDTO);
 
         if (!hasSuccessfulRegistration) {
             ModelAndView modelAndView = new ModelAndView("register");

@@ -26,6 +26,16 @@ public class User extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Rights userRight;
 
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "createdBy"
+    )
+    private List<Recipe> addedRecipes;
+
+    @ManyToMany
+    private List<Recipe> likedRecipes;
+
 
 
     public String getUserName() {

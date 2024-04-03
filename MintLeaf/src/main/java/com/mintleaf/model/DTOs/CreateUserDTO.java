@@ -7,16 +7,16 @@ import jakarta.validation.constraints.Size;
 
 public class CreateUserDTO {
 
-    @NotEmpty(message = "username cannot be empty!")
+    @NotBlank(message = "username cannot be empty!")
     @Size(min = 3, max = 20, message = "Username length must be between 3 and 20 characters!")
     String username;
-    @NotEmpty(message = "password cannot be empty!")
+    @NotBlank(message = "password cannot be empty!")
     @Size(min = 3, max = 20, message = "Password length must be between 3 and 20 characters!")
     String password;
-    @NotEmpty
+    @NotBlank(message = "password must be confirmed")
     String passwordConfirm;
     @NotBlank(message = "Email cannot be empty!")
-    @Email(message = "Please use valid email address")
+    @Email(regexp = ".+[@].+[\\.].+", message = "Please use valid email address")
     String email;
 
     public String getUsername() {

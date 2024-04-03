@@ -34,12 +34,25 @@
                    th:field="*{username}"
                    th:errorclass="login_error">
 
-            <input id="password"
-                   name="password"
-                   type="password" class="field" placeholder="Password" maxlength="18" minlength="2">
-            <input id="passwordConfirm"
-                   name="passwordConfirm"
-                   type="password" class="field" placeholder="Confirm Password" maxlength="18" minlength="2">
+            <small th:if="${#fields.hasErrors('password')}"
+                   th:errors="*{password}"
+                   class="login_error"></small>
+
+            <input type="password" id="password" class="field"
+                   name="password" placeholder="Password"
+                   th:field="*{password}"
+                   th:errorclass="login_error"
+                   maxlength="18" minlength="2">
+
+            <small th:if="${#fields.hasErrors('passwordConfirm')}"
+                   th:errors="*{passwordConfirm}"
+                   class="login_error"></small>
+
+            <input type="password" id="passwordConfirm" class="field"
+                   name="passwordConfirm" placeholder="Confirm Password"
+                   th:field="*{passwordConfirm}"
+                   th:errorclass="login_error"
+                   maxlength="18" minlength="2">
 
             <small th:if="${#fields.hasErrors('email')}"
                    th:errors="*{email}"

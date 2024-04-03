@@ -1,41 +1,55 @@
 package com.mintleaf.model.entities;
 
 import com.mintleaf.model.enums.Type;
-import jakarta.persistence.Column;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
+@Entity
+@Table(name = "recipes")
 public class Recipe extends BaseEntity {
 
     @Column(nullable = false)
     @Size(min = 2, max = 20)
     private String recipeName;
 
+    @Enumerated(EnumType.STRING)
     private Type category;
 
+    @ManyToOne
     private Cuisine cuisine;
 
     private String imagePath;
 
     private String prepTime;
 
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "recipe"
+    )
     private List<Ingredient> ingredients;
 
     private String description;
 
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "recipe"
+    )
     private List<Direction> directions;
 
+
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            mappedBy = "recipe"
+    )
     private List<Comment> comments;
 
     @ManyToOne
-    private List<User> createdBy;
-
-    @ManyToMany
-    private List<User> likedBy;
-
+    private User createdBy;
 
 
 }
