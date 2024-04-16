@@ -20,7 +20,9 @@ public class Recipe extends BaseEntity {
     @ManyToOne
     private Cuisine cuisine;
 
-    private String imagePath;
+    private String imageURL;
+
+    private byte[] imageData;
 
     private String prepTime;
 
@@ -50,6 +52,8 @@ public class Recipe extends BaseEntity {
 
     @ManyToOne
     private User createdBy;
+
+    private boolean approvedByAdmin;
 
 
 }

@@ -9,15 +9,15 @@ public class CreateUserDTO {
 
     @NotBlank(message = "username cannot be empty!")
     @Size(min = 3, max = 20, message = "Username length must be between 3 and 20 characters!")
-    String username;
+    private String username;
     @NotBlank(message = "password cannot be empty!")
     @Size(min = 3, max = 20, message = "Password length must be between 3 and 20 characters!")
-    String password;
+    private String password;
     @NotBlank(message = "password must be confirmed")
-    String passwordConfirm;
+    private String passwordConfirm;
     @NotBlank(message = "Email cannot be empty!")
     @Email(regexp = ".+[@].+[\\.].+", message = "Please use valid email address")
-    String email;
+    private String email;
 
     public String getUsername() {
         return username;
