@@ -18,12 +18,10 @@ public class MintUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        UserDetails userDetails = userRepository
+        return userRepository
                 .findAllByUserName(username)
                 .map(MintUserDetailService::map)
                 .orElseThrow(() -> new UsernameNotFoundException("User " + username + " not found!") );
-
-        return userDetails;
 
     }
 

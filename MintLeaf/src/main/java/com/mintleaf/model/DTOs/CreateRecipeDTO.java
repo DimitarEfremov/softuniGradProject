@@ -21,6 +21,16 @@ public class CreateRecipeDTO {
 
     private int prepTimeInMinutes;
 
+    private String directions;
+
+    public String getDirections() {
+        return directions;
+    }
+
+    public void setDirections(String directions) {
+        this.directions = directions;
+    }
+
     public int getPrepTimeInMinutes() {
         return prepTimeInMinutes;
     }
