@@ -1,5 +1,6 @@
 package com.mintleaf.model.DTOs;
 
+import com.mintleaf.model.entities.User;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Size;
 
@@ -14,6 +15,35 @@ public class CreateRecipeDTO {
 
     private String imageURL;
 
+    private String category;
+
+    private User createdBy;
+
+    private int prepTimeInMinutes;
+
+    public int getPrepTimeInMinutes() {
+        return prepTimeInMinutes;
+    }
+
+    public void setPrepTimeInMinutes(int prepTimeInMinutes) {
+        this.prepTimeInMinutes = prepTimeInMinutes;
+    }
+
+    public User getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(User createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     public byte[] getImageData() {
         return imageData;

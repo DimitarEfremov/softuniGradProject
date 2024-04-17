@@ -26,7 +26,7 @@
 
             <input type="text" class="field" name="recipeName" placeholder="Recipe Name">
 
-            <select class="field" name="foodType">
+            <select class="field" name="cuisine">
                 <option value="" disabled selected>> Select cuisine</option>
                 <option value="Placeholder">Placeholder</option>
                 <option value="Placeholder">Placeholder</option>
@@ -34,7 +34,7 @@
                 <option value="Placeholder">Placeholder</option>
             </select>
 
-            <select class="field" name="foodType">
+            <select class="field" name="category">
                 <option value="" disabled selected>>Select category</option>
                 <option value="BREAKFAST_AND_BRUNCH">Breakfast and brunch</option>
                 <option value="APPETISERS">Appetisers</option>
@@ -47,13 +47,16 @@
 
             <input type="text" class="field" id="imageUrl" name="imageURL" placeholder="Image URL">
 
-            <div>
+            <div class="form-group">
                 <label for="image" class="field">Or select image file:</label>
                 <input type="file" id="image" name="imageData">
             </div>
 
+            <div class="form-group">
+                <label for="prepTimeInMinutes" class="field">Prep Time in minutes:</label>
+                <input type="number" class="field" value="0" min="0" step="1" id="prepTimeInMinutes" name="prepTimeInMinutes">
+            </div>
 
-            <input type="time" class="field" placeholder="Prep Time">
 
             <legend>Add 1 product on a row, for example: <b> Potatoes - 1kg </b> </legend>
             <textarea class="recipe_textarea" name="products" rows="10" cols="30">
