@@ -17,11 +17,42 @@ public class CreateRecipeDTO {
 
     private String category;
 
-    private User createdBy;
+    private String cuisine;
+
+    private String description;
 
     private int prepTimeInMinutes;
 
     private String directions;
+
+    private String ingredients;
+
+    private User createdBy;
+
+
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
 
     public String getDirections() {
         return directions;
