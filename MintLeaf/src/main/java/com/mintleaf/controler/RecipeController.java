@@ -37,7 +37,7 @@ public class RecipeController {
 
     @PostMapping("/add-recipe")
     public ModelAndView addRecipe(
-            @ModelAttribute("CreateRecipesDTO") @Valid CreateRecipeDTO createRecipeDTO, BindingResult bindingResult) {
+            @ModelAttribute("CreateRecipeDTO") @Valid CreateRecipeDTO createRecipeDTO, BindingResult bindingResult) {
 
         User currentUser = getCurrentUser(userService);
 
